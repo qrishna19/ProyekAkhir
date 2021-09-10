@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Proyek as ProyekModel;
 use App\Models\Kategori;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ProyekController extends Controller
@@ -59,16 +60,25 @@ class ProyekController extends Controller
 
         // $mitra = Mitra::where('user_id', Auth::id())->first();
         // try {
-            ProyekModel::create([
+            $ids="";
+            
+            $pm = ProyekModel::create([
             'gambar_proyek' => $imageName,
             'judul_proyek' => $request->judul_proyek,
             'deskripsi_proyek' => $request->deskripsi_proyek,
             'id_kategori' => $request->id_kategori,
             'id_dosen' => $request->id_dosen,
-            'id_anggota' => $request->id_anggota,
+            // 'id_anggota' => $ids,
             'jenis_proyek' => $request->jenis_proyek,
             'link_proyek' => $request->link_proyek,
             ]);
+            
+            foreach ($request->id_anggota as $id){
+               DB::table('anggota_proyek')->insert([
+                'id_user' => $id,
+                'id_proyek' => $pm['id']
+               ]);
+            }
             return redirect()->route('proyek');//->with('success','Lowongan berhasil dibuat!');
         // } catch (\Exception $e) {
         //     return redirect()->back();//->with('error','Lowongan gagal dibuat!');
