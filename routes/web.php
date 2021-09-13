@@ -24,6 +24,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/kategori', [App\Http\Controllers\KategoriController::class, 'index'])->name('kategori');
+Route::get('/order', [App\Http\Controllers\HomeController::class, 'order'])->name('order');
+Route::get('/tampil_proyek/{id}', [App\Http\Controllers\HomeController::class, 'tampil_proyek'])->name('tampil_proyek');
 //Route::get('/proyek', Proyek2::class);
 // Route::get('/user', User::class);
 // Route::get('/masterdata', Masterdata::class);

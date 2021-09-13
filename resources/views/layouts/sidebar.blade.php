@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<div style="border: 1px solid #e3e3e3;background-color: #f8fafc;">
+<div style="border: 1px solid #e3e3e3;background-color: #f8fafc; position: fixed;">
     <ul class="nav flex-column pt-3">
         <li class="nav-item text-center pt-2">
             <a href="#">

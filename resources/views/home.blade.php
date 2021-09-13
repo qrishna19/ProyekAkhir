@@ -4,50 +4,25 @@
 <div class="row justify-content-md-center pt-5">
     <div class="col-md-10">
         <div class="">
-            <input class="form-control form-control-lg" style="height:50px" type="text" placeholder="Pencarian">
+            <form action="{{route('order')}}" method="GET">
+            <input class="form-control form-control-lg" name="q" style="height:50px" type="text" placeholder="Pencarian" value="{{ $q }}"/>
             <br>
-            <select class="form-control form-control-sm" style="width:150px">
-                <option>Proyek Terbaru</option>
-                <option>Aplikasi WEB</option>
-                <option>Aplikasi Mobile</option>
-                <option>Tugas Akhir</option>
-                <option>Multimedia</option>
+            <select class="form-control form-control-sm" name="order" style="width:150px">
+                <option value="1" selected="{{ $order === '1' ? 'selected' : '' }}">Proyek Terbaru</option>
+                <option value="2" selected="{{ $order === '2' ? 'selected' : '' }}">Judul Proyek</option>
             </select>
+            <button type="submit" name="submit" class="btn btn-primary mt-1">urutkan</button>
         </div>
     </div>
+</form>
 </div>
 <div class="row justify-content-md-center pt-5 m-2">
-    <div class="col-md text-center">
-        <img src="{{asset('asset/proyek.png')}}" class="item-image">
-        <h4 class="item-title pt-3">Judul Proyek</h4>
-        <p class="item-desc">Deskripsi singkat</p>
+    @foreach($proyek as $proyek)
+    <div class="col-md-4 text-center">
+        <img src="{{asset('images/'.$proyek->gambar_proyek)}}" class="gambar_home">
+        <h4 class="item-title pt-3"> <a href="/tampil_proyek/{{$proyek->id}}">{{$proyek->judul_proyek}}</a></h4>
+        <p class="item-desc">{{$proyek->deskripsi_proyek}}</p>
     </div>
-    <div class="col-md text-center">
-        <img src="{{asset('asset/proyek.png')}}" class="item-image">
-        <h4 class="item-title pt-3">Judul Proyek</h4>
-        <p class="item-desc">Deskripsi singkat</p>
-    </div>
-    <div class="col-md text-center">
-        <img src="{{asset('asset/proyek.png')}}" class="item-image">
-        <h4 class="item-title pt-3">Judul Proyek</h4>
-        <p class="item-desc">Deskripsi singkat</p>
-    </div>
-</div>
-<div class="row justify-content-md-center pt-5 m-2">
-    <div class="col-md text-center">
-        <img src="{{asset('asset/proyek.png')}}" class="item-image">
-        <h4 class="item-title pt-3">Judul Proyek</h4>
-        <p class="item-desc">Deskripsi singkat</p>
-    </div>
-    <div class="col-md text-center">
-        <img src="{{asset('asset/proyek.png')}}" class="item-image">
-        <h4 class="item-title pt-3">Judul Proyek</h4>
-        <p class="item-desc">Deskripsi singkat</p>
-    </div>
-    <div class="col-md text-center">
-        <img src="{{asset('asset/proyek.png')}}" class="item-image">
-        <h4 class="item-title pt-3">Judul Proyek</h4>
-        <p class="item-desc">Deskripsi singkat</p>
-    </div>
+    @endforeach
 </div>
 @endsection
