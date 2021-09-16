@@ -2,7 +2,7 @@
 @section("content")
 <div style="background-color: #F2F3F5;">
     <div class="text-center">
-        <h3 class="pt-5">{{ $proyek->judul_proyek }}k</h3>
+        <h3 class="pt-5">{{ $proyek->judul_proyek }}</h3>
     </div>
     <div class="container pt-5 pb-5">
         <div class="card p-5">

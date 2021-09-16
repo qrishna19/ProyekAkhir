@@ -26,6 +26,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/kategori', [App\Http\Controllers\KategoriController::class, 'index'])->name('kategori');
 Route::get('/order', [App\Http\Controllers\HomeController::class, 'order'])->name('order');
 Route::get('/tampil_proyek/{id}', [App\Http\Controllers\HomeController::class, 'tampil_proyek'])->name('tampil_proyek');
+Route::get('/tampil_kategori/{id}', [App\Http\Controllers\KategoriController::class, 'showProjects'])->name('tampil_kategori');
+Route::get('/order_kategori/{id}', [App\Http\Controllers\KategoriController::class, 'order'])->name('orderAndCategory');
+
 //Route::get('/proyek', Proyek2::class);
 // Route::get('/user', User::class);
 // Route::get('/masterdata', Masterdata::class);

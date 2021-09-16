@@ -12,13 +12,13 @@
         <div class="col-md-6 text-center">
             <img src="{{asset('asset/Group 63.png')}}">
             <br>
-            <h5 class="item-title pt-4">Aplikasi WEB</h4>
+            <h5 class="item-title pt-4"><a href="/tampil_kategori/1">Aplikasi WEB</a></h4>
 
         </div>
         <div class="col-md-6 text-center">
             <img src="{{asset('asset/Group 64.png')}}">
             <br>
-            <h5 class="item-title pt-4">Aplikasi Mobile</h4>
+            <h5 class="item-title pt-4"><a href="/tampil_kategori/2">Aplikasi Mobile</a></h4>
 
         </div>
     </div>
@@ -26,13 +26,13 @@
         <div class="col-md-6 text-center">
             <img src="{{asset('asset/Group 65.png')}}">
             <br>
-            <h5 class="item-title pt-4">Tugas Akhir</h4>
+            <h5 class="item-title pt-4"><a href="/tampil_kategori/4">Tugas Akhir</a></h4>
 
         </div>
         <div class="col-md-6 text-center">
             <img src="{{asset('asset/Group 66.png')}}">
             <br>
-            <h5 class="item-title pt-4">Multimedia</h4>
+            <h5 class="item-title pt-4"><a href="/tampil_kategori/3">Multimedia</a></h4>
 
         </div>
     </div>
